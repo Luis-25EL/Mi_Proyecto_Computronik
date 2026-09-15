@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Compra confirmada | KOMPUTRONIK</title>
+
+    <link rel="stylesheet"
+          href="css/stayle.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!--=========================================================
+                    NAVEGACIÓN
+=========================================================-->
+
+<nav class="navbar-transparent">
+    <div class="nav-top">
+
+    <div class="logo-nav">
+
+        <a href="index.html">
+
+            <h2>
+                KOMPUTRONIK
+            </h2>
+
+        </a>
+
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Inicio
+            </a>
+        </li>
+
+        <li>
+            <a href="servicios.html">
+                Servicios
+            </a>
+        </li>
+
+        <li>
+            <a href="Categorias.html">
+                Accesorios
+            </a>
+        </li>
+
+        <li>
+            <a href="ofertas.html">
+                Ofertas
+            </a>
+        </li>
+
+        <li>
+            <a href="contacto.html">
+                Contacto
+            </a>
+        </li>
+
+    </ul>
+
+    </div>
+
+    <div class="nav-acciones">
+
+        <button
+            id="btnTema"
+            class="btn-tema"
+            type="button"
+            aria-label="Cambiar tema">
+            🌙
+        </button>
+
+        <!-- iniciar sesión -->
+        <a href="login.html" class="nav-login" aria-label="Iniciar sesión">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-login-text">Iniciar Sesión</span>
+        </a>
+
+        <a href="carrito.html"
+           class="carrito">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span
+                class="carrito-contador"
+                id="contadorCarrito">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!--=========================================================
+                CONFIRMACIÓN
+=========================================================-->
+
+<main class="confirmacion">
+
+
+    <div class="confirmacion-card">
+
+
+        <!-- ICONO -->
+
+        <div class="confirmacion-icono">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <!-- TÍTULO -->
+
+        <span class="confirmacion-etiqueta">
+            ¡COMPRA REALIZADA!
+        </span>
+
+
+        <h1>
+            Gracias por tu compra
+        </h1>
+
+
+        <p class="confirmacion-mensaje">
+
+            Tu pedido ha sido registrado
+            correctamente.
+
+            <br>
+
+            Hemos preparado la información
+            de tu compra.
+
+        </p>
+
+
+        <!-- NÚMERO DE PEDIDO -->
+
+        <div class="numero-pedido">
+
+            <span>
+                Número de pedido
+            </span>
+
+            <strong id="numeroPedido">
+                KOM-000000
+            </strong>
+
+        </div>
+
+
+        <!-- RESUMEN -->
+
+        <div class="confirmacion-resumen">
+
+
+            <div class="confirmacion-linea">
+
+                <span>
+                    Cliente
+                </span>
+
+                <strong id="clientePedido">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="confirmacion-linea">
+
+                <span>
+                    Método de pago
+                </span>
+
+                <strong id="metodoPedido">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="confirmacion-linea">
+
+                <span>
+                    Total pagado
+                </span>
+
+                <strong id="totalPedido">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="confirmacion-botones">
+
+            <a
+                href="index.html"
+                class="btn-confirmacion-principal">
+
+                <i class="fa-solid fa-house"></i>
+
+                Volver al inicio
+
+            </a>
+
+
+            <a
+                href="https://wa.me/51999999999?text=Hola%20KOMPUTRONIK,%20quiero%20consultar%20sobre%20mi%20pedido."
+                class="btn-confirmacion-secundario"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Consultar pedido
+
+            </a>
+
+        </div>
+
+
+        <!-- SEGURIDAD -->
+
+        <div class="confirmacion-seguridad">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                Gracias por confiar en KOMPUTRONIK.
+                Estamos para ayudarte.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<!--=========================================================
+                    JAVASCRIPT
+=========================================================-->
+
+<script src="js/tema.js"></script>
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /*
+        ================================================
+                    NÚMERO DE PEDIDO
+        ================================================
+        */
+
+        const numero =
+            "KOM-" +
+            Math.floor(
+                100000 +
+                Math.random() * 900000
+            );
+
+
+        document.getElementById(
+            "numeroPedido"
+        ).textContent = numero;
+
+
+        /*
+        ================================================
+                    DATOS DEL PEDIDO
+        ================================================
+        */
+
+        const pedido =
+            JSON.parse(
+                localStorage.getItem(
+                    "ultimoPedido"
+                )
+            );
+
+
+        if (!pedido) {
+
+            return;
+
+        }
+
+
+        /*
+        ================================================
+                    CLIENTE
+        ================================================
+        */
+
+        document.getElementById(
+            "clientePedido"
+        ).textContent =
+            pedido.nombre +
+            " " +
+            pedido.apellido;
+
+
+        /*
+        ================================================
+                    MÉTODO DE PAGO
+        ================================================
+        */
+
+        document.getElementById(
+            "metodoPedido"
+        ).textContent =
+            pedido.metodoPago;
+
+
+        /*
+        ================================================
+                    TOTAL
+        ================================================
+        */
+
+        document.getElementById(
+            "totalPedido"
+        ).textContent =
+            "S/ " +
+            pedido.total.toLocaleString(
+                "es-PE",
+                {
+                    minimumFractionDigits: 2
+                }
+            );
+
+
+        /*
+        ================================================
+                    ACTUALIZAR CONTADOR
+        ================================================
+        */
+
+        document.getElementById(
+            "contadorCarrito"
+        ).textContent = "0";
+
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

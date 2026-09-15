@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar compra | KOMPUTRONIK</title>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/stayle.css">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!--=========================================================
+                    NAVEGACIÓN
+=========================================================-->
+
+<nav class="navbar-transparent">
+    <div class="nav-top">
+
+    <div class="logo-nav">
+
+        <a href="index.html">
+
+            <span class="logo-icon">
+                K
+            </span>
+
+            <div class="logo-text">
+
+                <h2>
+                    KOMPUTRONIK
+                </h2>
+
+                <span>
+                    TECNOLOGÍA & INNOVACIÓN
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Inicio
+            </a>
+        </li>
+
+        <li>
+            <a href="servicios.html">
+                Servicios
+            </a>
+        </li>
+
+        <li>
+            <a href="Categorias.html">
+                Categorias
+            </a>
+        </li>
+
+        <li>
+            <a href="ofertas.html">
+                Ofertas
+            </a>
+        </li>
+
+        <li>
+            <a href="contacto.html">
+                Contacto
+            </a>
+        </li>
+
+    </ul>
+
+    </div>
+
+    <div class="nav-acciones">
+
+        <button
+            id="btnTema"
+            class="btn-tema"
+            type="button"
+            aria-label="Cambiar tema">
+            🌙
+        </button>
+
+        <!-- iniciar sesión -->
+        <a href="login.html" class="nav-login" aria-label="Iniciar sesión">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-login-text">Iniciar Sesión</span>
+        </a>
+
+        <a href="carrito.html"
+           class="carrito">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span
+                class="carrito-contador"
+                id="contadorCarrito">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!--=========================================================
+                    ENCABEZADO
+=========================================================-->
+
+<section class="checkout-header">
+
+    <div>
+
+        <span>
+            KOMPUTRONIK
+        </span>
+
+        <h1>
+            Finalizar compra
+        </h1>
+
+        <p>
+            Completa tus datos para procesar tu pedido.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!--=========================================================
+                    CHECKOUT
+=========================================================-->
+
+<main class="checkout-seccion">
+
+
+    <div class="checkout-container">
+
+
+        <!--=================================================
+                    FORMULARIO
+        =================================================-->
+
+        <section class="checkout-formulario">
+
+
+            <!-- DATOS PERSONALES -->
+
+            <div class="checkout-bloque">
+
+                <div class="checkout-titulo">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <div>
+
+                        <h2>
+                            Datos personales
+                        </h2>
+
+                        <p>
+                            Información del comprador
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-grupo">
+
+                        <label for="nombre">
+                            Nombres
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            placeholder="Ingresa tus nombres"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-grupo">
+
+                        <label for="apellido">
+                            Apellidos
+                        </label>
+
+                        <input
+                            type="text"
+                            id="apellido"
+                            placeholder="Ingresa tus apellidos"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-grupo">
+
+                        <label for="documento">
+                            DNI
+                        </label>
+
+                        <input
+                            type="text"
+                            id="documento"
+                            maxlength="8"
+                            placeholder="12345678"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-grupo">
+
+                        <label for="telefono">
+                            Teléfono
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            placeholder="999 999 999"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-grupo form-completo">
+
+                        <label for="correo">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            placeholder="correo@ejemplo.com"
+                            required>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DATOS DE ENTREGA -->
+
+            <div class="checkout-bloque">
+
+                <div class="checkout-titulo">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <h2>
+                            Dirección de entrega
+                        </h2>
+
+                        <p>
+                            ¿Dónde enviaremos tu pedido?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-grupo form-completo">
+
+                        <label for="direccion">
+                            Dirección
+                        </label>
+
+                        <input
+                            type="text"
+                            id="direccion"
+                            placeholder="Av. / Jr. / Calle..."
+                            required>
+
+                    </div>
+
+
+                    <div class="form-grupo">
+
+                        <label for="distrito">
+                            Distrito
+                        </label>
+
+                        <select id="distrito">
+
+                            <option value="">
+                                Selecciona tu distrito
+                            </option>
+
+                            <option>
+                                Ate
+                            </option>
+
+                            <option>
+                                Breña
+                            </option>
+
+                            <option>
+                                Cercado de Lima
+                            </option>
+
+                            <option>
+                                Comas
+                            </option>
+
+                            <option>
+                                Los Olivos
+                            </option>
+
+                            <option>
+                                Miraflores
+                            </option>
+
+                            <option>
+                                San Borja
+                            </option>
+
+                            <option>
+                                San Isidro
+                            </option>
+
+                            <option>
+                                San Juan de Lurigancho
+                            </option>
+
+                            <option>
+                                San Martín de Porres
+                            </option>
+
+                            <option>
+                                Santiago de Surco
+                            </option>
+
+                            <option>
+                                Villa El Salvador
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-grupo">
+
+                        <label for="referencia">
+                            Referencia
+                        </label>
+
+                        <input
+                            type="text"
+                            id="referencia"
+                            placeholder="Ej. frente al parque">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MÉTODO DE PAGO -->
+
+            <div class="checkout-bloque">
+
+                <div class="checkout-titulo">
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    <div>
+
+                        <h2>
+                            Método de pago
+                        </h2>
+
+                        <p>
+                            Selecciona cómo deseas pagar
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="metodos-pago">
+
+
+                    <label class="metodo-pago">
+
+                        <input
+                            type="radio"
+                            name="metodoPago"
+                            value="tarjeta"
+                            checked>
+
+                        <div class="metodo-contenido">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <div>
+
+                                <strong>
+                                    Tarjeta
+                                </strong>
+
+                                <span>
+                                    Visa, Mastercard, etc.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </label>
+
+
+                    <label class="metodo-pago">
+
+                        <input
+                            type="radio"
+                            name="metodoPago"
+                            value="yape">
+
+                        <div class="metodo-contenido">
+
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+
+                            <div>
+
+                                <strong>
+                                    Yape
+                                </strong>
+
+                                <span>
+                                    Pago mediante Yape
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </label>
+
+
+                    <label class="metodo-pago">
+
+                        <input
+                            type="radio"
+                            name="metodoPago"
+                            value="plin">
+
+                        <div class="metodo-contenido">
+
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+
+                            <div>
+
+                                <strong>
+                                    Plin
+                                </strong>
+
+                                <span>
+                                    Pago mediante Plin
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <!-- DATOS DE TARJETA -->
+
+                <div
+                    id="datosTarjeta"
+                    class="datos-tarjeta">
+
+
+                    <div class="form-grupo">
+
+                        <label for="numeroTarjeta">
+                            Número de tarjeta
+                        </label>
+
+                        <input
+                            type="text"
+                            id="numeroTarjeta"
+                            maxlength="19"
+                            placeholder="0000 0000 0000 0000">
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-grupo">
+
+                            <label for="vencimiento">
+                                Vencimiento
+                            </label>
+
+                            <input
+                                type="text"
+                                id="vencimiento"
+                                placeholder="MM/AA"
+                                maxlength="5">
+
+                        </div>
+
+
+                        <div class="form-grupo">
+
+                            <label for="cvv">
+                                CVV
+                            </label>
+
+                            <input
+                                type="password"
+                                id="cvv"
+                                maxlength="4"
+                                placeholder="123">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!--=================================================
+                    RESUMEN DEL PEDIDO
+        =================================================-->
+
+        <aside class="checkout-resumen">
+
+            <h2>
+                Resumen del pedido
+            </h2>
+
+
+            <div
+                id="checkoutProductos"
+                class="checkout-productos">
+
+                <!-- Productos generados por JS -->
+
+            </div>
+
+
+            <div class="checkout-linea">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="checkoutSubtotal">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-linea">
+
+                <span>
+                    Envío
+                </span>
+
+                <strong>
+                    Gratis
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-separador"></div>
+
+
+            <div class="checkout-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="checkoutTotal">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+
+            <button
+                id="btnConfirmarCompra"
+                class="btn-confirmar">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Confirmar y pagar
+
+            </button>
+
+
+            <div class="checkout-seguridad">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <strong>
+                        Pago seguro
+                    </strong>
+
+                    <p>
+                        Protegemos tu información personal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="carrito.html"
+                class="volver-carrito">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Volver al carrito
+
+            </a>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+
+<!--=========================================================
+                        WHATSAPP
+=========================================================-->
+
+<a
+    href="https://wa.me/51999999999?text=Hola%20KOMPUTRONIK,%20necesito%20ayuda%20con%20mi%20compra."
+    class="whatsapp-flotante"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!--=========================================================
+                    JAVASCRIPT
+=========================================================-->
+
+<script src="js/tema.js"></script>
+<script src="js/chek.js"></script>
+
+
+</body>
+
+</html>

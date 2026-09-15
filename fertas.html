@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KOMPUTRONIK | Ofertas</title>
+
+    <link rel="stylesheet" href="css/stayle.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+                    NAVEGACIÓN PRINCIPAL
+========================================================= -->
+
+<header class="header-tienda">
+
+    <div class="nav-top">
+        <div class="nav-top-left">
+
+        <!-- LOGO -->
+        <div class="logo-nav">
+
+            <a href="index.html">
+
+                <span class="logo-icon">K</span>
+
+                <div class="logo-text">
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- BUSCADOR -->
+        <div class="buscador">
+
+            <input
+                type="text"
+                id="buscadorProductos"
+                placeholder="Buscar ofertas, laptops, componentes..."
+                autocomplete="off"
+            >
+
+            <button type="button" id="btnBuscar" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MENÚ -->
+        <ul class="nav-links">
+
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="fertas.html" class="nav-activo">Ofertas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+
+        </ul>
+
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="nav-acciones">
+
+        <!-- MODO OSCURO / CLARO -->
+        <button
+            id="btnTema"
+            class="btn-tema"
+            type="button"
+            aria-label="Cambiar tema">
+            🌙
+        </button>
+
+        <!-- iniciar sesión -->
+        <a href="login.html" class="nav-login" aria-label="Iniciar sesión">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-login-text">Iniciar Sesión</span>
+        </a>
+
+        <!-- CARRITO -->
+        <a href="carrito.html"
+           class="carrito"
+           aria-label="Carrito de compras">
+
+            <i class="fa-solid fa-cart-shopping carrito-icono"></i>
+
+            <span class="carrito-contador" id="contadorCarrito">
+                0
+            </span>
+
+        </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+                    HERO OFERTAS
+========================================================= -->
+
+<section class="banner-principal">
+
+    <span class="tag-hero">
+        🔥 ZONA DE DESCUENTOS
+    </span>
+
+    <h1>
+        Aprovecha las Mejores Ofertas
+        y Rebajas del Mes
+    </h1>
+
+    <p>
+        Equipos de alta gama con precios rebajados
+        por tiempo limitado.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+                    CONVERSOR DE MONEDAS
+========================================================= -->
+
+<section class="conversor-section">
+
+    <div class="conversor-container">
+
+        <h2>💱 Conversor de Monedas</h2>
+
+        <p class="conversor-descripcion">
+            Convierte monedas utilizando tasas de cambio actualizadas.
+        </p>
+
+        <div class="conversor-form">
+
+            <div class="campo-conversor">
+
+                <label for="monto">
+                    Monto
+                </label>
+
+                <input
+                    type="number"
+                    id="monto"
+                    placeholder="Ingrese el monto"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <div class="campo-conversor">
+
+                <label for="monedaOrigen">
+                    De
+                </label>
+
+                <select id="monedaOrigen">
+
+                    <option value="USD">
+                        🇺🇸 Dólar estadounidense (USD)
+                    </option>
+
+                    <option value="PEN" selected>
+                        🇵🇪 Sol peruano (PEN)
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo-conversor">
+
+                <label for="monedaDestino">
+                    A
+                </label>
+
+                <select id="monedaDestino">
+
+                    <option value="USD">
+                        🇺🇸 Dólar estadounidense (USD)
+                    </option>
+
+                    <option value="PEN" selected>
+                        🇵🇪 Sol peruano (PEN)
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="btnConvertir"
+                class="btn-convertir">
+
+                Convertir
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="resultadoConversion"
+            class="resultado-conversion">
+
+            <p>
+                Ingrese un monto y seleccione las monedas.
+            </p>
+
+        </div>
+
+
+        <p
+            id="mensajeError"
+            class="mensaje-error">
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================================================
+                    CATÁLOGO DE OFERTAS
+========================================================= -->
+
+<main class="contenedor ofertas-productos">
+
+    <div class="encabezado-seccion">
+
+        <span class="section-label">
+            OFERTAS KOMPUTRONIK
+        </span>
+
+        <h2>
+            ⚡ PRODUCTOS EN REBAJA
+        </h2>
+
+        <p>
+            Ahorra en grande con nuestra selección
+            especial de tecnología.
+        </p>
+
+    </div>
+
+
+    <!-- MENSAJE DE BÚSQUEDA -->
+
+    <div id="resultadoBusqueda"
+         style="text-align:center; margin:20px 0; font-weight:bold;">
+    </div>
+
+
+    <!-- =====================================================
+                    PRODUCTOS
+    ====================================================== -->
+
+    <div class="grid-productos" id="gridOfertas">
+
+
+        <!-- PRODUCTO 1 -->
+        <div class="card-producto"
+             data-nombre="Laptop Gamer ASUS TUF Ryzen 7 16GB RTX 3050"
+             data-categoria="laptops">
+
+            <span class="badge-descuento">-25%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80"
+                    alt="Laptop Gamer ASUS TUF">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">ASUS TUF</span>
+
+                <h3>
+                    Laptop Gamer ASUS TUF Ryzen 7 16GB RTX 3050
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(41)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 4,299
+                    </span>
+
+                    S/ 3,199.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Laptop ASUS TUF Oferta',
+                        3199.00,
+                        'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 2 -->
+        <div class="card-producto"
+             data-nombre="Monitor Gamer LG UltraGear 27 pulgadas 144Hz Full HD"
+             data-categoria="monitores">
+
+            <span class="badge-descuento">-30%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80"
+                    alt="Monitor Gamer LG UltraGear">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">LG ULTRAGEAR</span>
+
+                <h3>
+                    Monitor Gamer 27" IPS 144Hz Full HD
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(19)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 1,299
+                    </span>
+
+                    S/ 909.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Monitor LG 27 144Hz',
+                        909.00,
+                        'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 3 -->
+        <div class="card-producto"
+             data-nombre="Laptop Lenovo Legion 5 Ryzen 7 RTX 4060"
+             data-categoria="laptops">
+
+            <span class="badge-descuento">-20%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=500&q=80"
+                    alt="Laptop Lenovo Legion 5">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">LENOVO LEGION</span>
+
+                <h3>
+                    Laptop Lenovo Legion 5 Ryzen 7 RTX 4060
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(35)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 4,399
+                    </span>
+
+                    S/ 3,499.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Laptop Lenovo Legion 5',
+                        3499.00,
+                        'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 4 -->
+        <div class="card-producto"
+             data-nombre="PC Gamer Ryzen 7 RTX 4060 16GB RAM"
+             data-categoria="pc gamer">
+
+            <span class="badge-descuento">-15%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=500&q=80"
+                    alt="PC Gamer Ryzen 7 RTX 4060">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">KOMPUTRONIK GAMING</span>
+
+                <h3>
+                    PC Gamer Ryzen 7 RTX 4060 16GB RAM
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(27)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 5,099
+                    </span>
+
+                    S/ 4,299.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'PC Gamer Ryzen 7 RTX 4060',
+                        4299.00,
+                        'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 5 -->
+        <div class="card-producto"
+             data-nombre="Monitor Samsung Odyssey G5 27 pulgadas"
+             data-categoria="monitores">
+
+            <span class="badge-descuento">-25%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=500&q=80"
+                    alt="Monitor Samsung Odyssey G5">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">SAMSUNG ODYSSEY</span>
+
+                <h3>
+                    Monitor Samsung Odyssey G5 27"
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(32)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 1,599
+                    </span>
+
+                    S/ 1,199.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Monitor Samsung Odyssey G5',
+                        1199.00,
+                        'https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 6 -->
+        <div class="card-producto"
+             data-nombre="Teclado Mecanico Redragon RGB Gaming"
+             data-categoria="accesorios">
+
+            <span class="badge-descuento">-20%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80"
+                    alt="Teclado Mecánico Redragon">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">REDRAGON</span>
+
+                <h3>
+                    Teclado Mecánico Redragon RGB Gaming
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(48)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 199
+                    </span>
+
+                    S/ 159.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Teclado Mecánico Redragon RGB',
+                        159.00,
+                        'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 7 -->
+        <div class="card-producto"
+             data-nombre="Mouse Logitech G502 Gaming"
+             data-categoria="accesorios">
+
+            <span class="badge-descuento">-18%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&q=80"
+                    alt="Mouse Logitech G502">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">LOGITECH</span>
+
+                <h3>
+                    Mouse Logitech G502 Gaming
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(52)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 279
+                    </span>
+
+                    S/ 229.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Mouse Logitech G502 Gaming',
+                        229.00,
+                        'https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 8 -->
+        <div class="card-producto"
+             data-nombre="SSD Kingston NV2 1TB NVMe"
+             data-categoria="componentes">
+
+            <span class="badge-descuento">-25%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&q=80"
+                    alt="SSD Kingston NV2 1TB">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">KINGSTON</span>
+
+                <h3>
+                    SSD Kingston NV2 1TB NVMe
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(36)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 399
+                    </span>
+
+                    S/ 299.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'SSD Kingston NV2 1TB',
+                        299.00,
+                        'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 9 -->
+        <div class="card-producto"
+             data-nombre="Memoria RAM Corsair Vengeance 16GB"
+             data-categoria="componentes">
+
+            <span class="badge-descuento">-20%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=500&q=80"
+                    alt="Memoria RAM Corsair Vengeance">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">CORSAIR</span>
+
+                <h3>
+                    Memoria RAM Corsair Vengeance 16GB
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(44)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 239
+                    </span>
+
+                    S/ 189.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'RAM Corsair Vengeance 16GB',
+                        189.00,
+                        'https://images.unsplash.com/photo-1562976540-1502c2145186?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTO 10 -->
+        <div class="card-producto"
+             data-nombre="Cooler Master Hyper 212 RGB"
+             data-categoria="enfriamiento">
+
+            <span class="badge-descuento">-22%</span>
+
+            <div class="img-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500&q=80"
+                    alt="Cooler Master Hyper 212">
+
+            </div>
+
+            <div class="info-box">
+
+                <span class="marca">COOLER MASTER</span>
+
+                <h3>
+                    Cooler Master Hyper 212 RGB
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span class="review-count">(29)</span>
+                </div>
+
+                <p class="precio">
+
+                    <span class="precio-viejo">
+                        S/ 229
+                    </span>
+
+                    S/ 179.00
+
+                </p>
+
+                <button
+                    class="btn-comprar"
+                    onclick="agregarAlCarrito(
+                        'Cooler Master Hyper 212 RGB',
+                        179.00,
+                        'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500&q=80'
+                    )">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Agregar al carrito
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- MENSAJE CUANDO NO HAY RESULTADOS -->
+
+    <div id="sinResultados"
+         style="display:none; text-align:center; padding:40px;">
+
+        <h3>🔎 No encontramos productos</h3>
+
+        <p>
+            Prueba buscando por nombre, marca o categoría.
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+                    FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-columna footer-marca">
+
+            <div class="footer-logo">
+
+                <span class="footer-logo-icon">K</span>
+
+                <div>
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+
+            </div>
+
+            <p>
+                Tecnología, innovación y soluciones informáticas
+                para mejorar tu experiencia digital.
+            </p>
+
+            <div class="footer-redes">
+
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="TikTok">♪</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h3>Enlaces rápidos</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="servicios.html">Servicios</a>
+                </li>
+
+                <li>
+                    <a href="Categorias.html">Categorias</a>
+                </li>
+
+                <li>
+                    <a href="ofertas.html">Ofertas</a>
+                </li>
+
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h3>Categorías</h3>
+
+            <ul>
+
+                <li>
+                    <a href="Categorias.html">Laptops</a>
+                </li>
+
+                <li>
+                    <a href="Categorias.html">PC Gamer</a>
+                </li>
+
+                <li>
+                    <a href="Categorias.html">Monitores</a>
+                </li>
+
+                <li>
+                    <a href="Categorias.html">Accesorios</a>
+                </li>
+
+                <li>
+                    <a href="Categorias.html">Componentes</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-columna footer-contacto">
+
+            <h3>Contáctanos</h3>
+
+            <p>📍 Lima, Perú</p>
+            <p>📞 +51 999 999 999</p>
+            <p>✉️ contacto@komputronik.com</p>
+            <p>🕐 Lun - Sáb: 9:00 AM - 7:00 PM</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 KOMPUTRONIK. Todos los derechos reservados.
+        </p>
+
+        <div>
+
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de privacidad</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+                    WHATSAPP FLOTANTE
+========================================================= -->
+
+<a
+    href="https://wa.me/51999999999?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+    class="whatsapp-flotante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =========================================================
+                    JAVASCRIPT EXISTENTE
+========================================================= -->
+
+<script src="js/script.js"></script>
+<script src="js/Conversor.js"></script>
+<script src="js/tema.js"></script>
+
+<script>
+
+/*=========================================================
+          CARRITO EXCLUSIVO PARA OFERTAS
+=========================================================*/
+
+function agregarAlCarrito(nombre, precio, imagen) {
+
+    // Obtener carrito guardado
+    let carrito =
+        JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+    // Crear ID único para el producto
+    const id =
+        "oferta-" +
+        nombre
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-");
+
+
+    // Buscar producto existente
+    const productoExistente =
+        carrito.find(
+            producto =>
+                String(producto.id) === String(id)
+        );
+
+
+    // Si ya existe, aumentar cantidad
+    if (productoExistente) {
+
+        productoExistente.cantidad++;
+
+    } else {
+
+        // Agregar producto nuevo
+        carrito.push({
+
+            id: id,
+
+            nombre: nombre,
+
+            precio: Number(precio),
+
+            imagen: imagen,
+
+            cantidad: 1
+
+        });
+
+    }
+
+
+    // Guardar carrito
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
+
+
+    // Actualizar contador
+    actualizarContadorOfertas();
+
+
+    // Mostrar mensaje
+    mostrarMensajeOferta(
+        "✓ Producto agregado al carrito"
+    );
+
+}
+
+
+/*=========================================================
+              ACTUALIZAR CONTADOR DEL CARRITO
+=========================================================*/
+
+function actualizarContadorOfertas() {
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+
+    if (!contador) {
+        return;
+    }
+
+
+    const carrito =
+        JSON.parse(
+            localStorage.getItem("carrito")
+        ) || [];
+
+
+    const cantidad =
+        carrito.reduce(
+            (total, producto) =>
+                total +
+                Number(producto.cantidad || 0),
+            0
+        );
+
+
+    contador.textContent =
+        cantidad;
+
+}
+
+
+/*=========================================================
+                    MENSAJE
+=========================================================*/
+
+function mostrarMensajeOferta(texto) {
+
+    const mensaje =
+        document.createElement("div");
+
+
+    mensaje.className =
+        "mensaje-carrito";
+
+
+    mensaje.textContent =
+        texto;
+
+
+    mensaje.style.position =
+        "fixed";
+
+    mensaje.style.top =
+        "100px";
+
+    mensaje.style.right =
+        "20px";
+
+    mensaje.style.zIndex =
+        "9999";
+
+    mensaje.style.padding =
+        "15px 20px";
+
+    mensaje.style.borderRadius =
+        "10px";
+
+    mensaje.style.background =
+        "#28a745";
+
+    mensaje.style.color =
+        "#ffffff";
+
+    mensaje.style.fontWeight =
+        "bold";
+
+    mensaje.style.boxShadow =
+        "0 5px 15px rgba(0,0,0,0.3)";
+
+
+    document.body.appendChild(
+        mensaje
+    );
+
+
+    setTimeout(function () {
+
+        mensaje.remove();
+
+    }, 2000);
+
+}
+
+
+/*=========================================================
+                INICIAR CONTADOR
+=========================================================*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        actualizarContadorOfertas();
+
+    }
+);
+
+</script>
+
+<!-- =========================================================
+                    BUSCADOR DE OFERTAS
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buscador = document.getElementById("buscadorProductos");
+    const btnBuscar = document.getElementById("btnBuscar");
+
+    const productos = document.querySelectorAll(".card-producto");
+
+    const resultadoBusqueda =
+        document.getElementById("resultadoBusqueda");
+
+    const sinResultados =
+        document.getElementById("sinResultados");
+
+
+    function buscarProductos() {
+
+        const texto = buscador.value
+            .toLowerCase()
+            .trim();
+
+        let encontrados = 0;
+
+
+        productos.forEach(function (producto) {
+
+            const nombre =
+                producto.dataset.nombre.toLowerCase();
+
+            const categoria =
+                producto.dataset.categoria.toLowerCase();
+
+            const contenido =
+                producto.textContent.toLowerCase();
+
+
+            const coincide =
+                texto === "" ||
+                nombre.includes(texto) ||
+                categoria.includes(texto) ||
+                contenido.includes(texto);
+
+
+            if (coincide) {
+
+                producto.style.display = "";
+
+                encontrados++;
+
+            } else {
+
+                producto.style.display = "none";
+
+            }
+
+        });
+
+
+        if (texto === "") {
+
+            resultadoBusqueda.textContent = "";
+
+        } else if (encontrados > 0) {
+
+            resultadoBusqueda.textContent =
+                "🔎 Se encontraron " +
+                encontrados +
+                " producto(s)";
+
+        } else {
+
+            resultadoBusqueda.textContent =
+                "🔎 No se encontraron productos";
+
+        }
+
+
+        if (encontrados === 0 && texto !== "") {
+
+            sinResultados.style.display = "block";
+
+        } else {
+
+            sinResultados.style.display = "none";
+
+        }
+
+    }
+
+
+    buscador.addEventListener(
+        "input",
+        buscarProductos
+    );
+
+
+    btnBuscar.addEventListener(
+        "click",
+        buscarProductos
+    );
+
+
+    buscador.addEventListener(
+        "keydown",
+        function (evento) {
+
+            if (evento.key === "Enter") {
+
+                buscarProductos();
+
+            }
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>

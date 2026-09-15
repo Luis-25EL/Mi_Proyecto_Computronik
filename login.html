@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Iniciar Sesión | KOMPUTRONIK</title>
+
+    <link
+        rel="stylesheet"
+        href="css/stayle.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+                    NAVEGACIÓN
+========================================================= -->
+
+<nav class="navbar-transparent">
+    <div class="nav-top">
+
+        <!-- LOGO -->
+        <div class="logo-nav">
+            <a href="index.html">
+                <span class="logo-icon">K</span>
+                <div class="logo-text">
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- BUSCADOR -->
+        <div class="buscador">
+            <input
+                type="text"
+                id="buscadorProductos"
+                placeholder="Buscar laptops, PC gamer, componentes..."
+                autocomplete="off"
+            >
+            <button
+                type="button"
+                id="btnBuscar"
+                aria-label="Buscar productos"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <!-- MENÚ PRINCIPAL -->
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="fertas.html">Ofertas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+    </div>
+
+    <!-- ACCIONES -->
+    <div class="nav-acciones">
+
+        <button
+            id="btnTema"
+            class="btn-tema"
+            type="button"
+            aria-label="Cambiar tema"
+        >
+            🌙
+        </button>
+
+        <!-- iniciar sesión -->
+        <a href="login.html" class="nav-login nav-login-activo" aria-label="Iniciar sesión">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-login-text">Iniciar Sesión</span>
+        </a>
+
+        <!-- carrito de compras -->
+        <a href="carrito.html" class="carrito" aria-label="Carrito de compras">
+            <i class="fa-solid fa-cart-shopping carrito-icono"></i>
+            <span class="carrito-contador" id="contadorCarrito">0</span>
+        </a>
+
+        <!-- MENÚ MÓVIL -->
+        <button class="menu-movil" id="btnMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</nav>
+
+
+<!-- =========================================================
+                    SECCIÓN INICIAR SESIÓN
+========================================================= -->
+
+<main class="auth-section">
+
+    <div class="auth-card">
+
+        <div class="auth-card-header">
+            <span class="auth-icono">
+                <i class="fa-solid fa-user-lock"></i>
+            </span>
+            <h1>Iniciar Sesión</h1>
+            <p>Ingresa a tu cuenta KOMPUTRONIK para ver tus pedidos y ofertas exclusivas.</p>
+        </div>
+
+        <form id="formLogin" class="auth-form" novalidate>
+
+            <div class="form-grupo form-completo">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tucorreo@ejemplo.com"
+                    autocomplete="email"
+                    required
+                >
+                <small class="auth-error" id="errorEmail"></small>
+            </div>
+
+            <div class="form-grupo form-completo">
+                <label for="password">Contraseña</label>
+                <div class="auth-password-wrap">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="••••••••"
+                        autocomplete="current-password"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="auth-toggle-pass"
+                        id="btnTogglePass"
+                        aria-label="Mostrar contraseña"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+                <small class="auth-error" id="errorPassword"></small>
+            </div>
+
+            <a href="#" class="auth-olvido">¿Se te olvidó tu contraseña?</a>
+
+            <button type="submit" class="btn-pagar auth-submit">
+                Iniciar Sesión
+            </button>
+
+            <div class="auth-mensaje" id="authMensaje"></div>
+
+        </form>
+
+        <div class="auth-divider">
+            <span>o</span>
+        </div>
+
+        <p class="auth-registro">
+            ¿No tienes una cuenta?
+            <a href="registro.html">Regístrate ahora</a>
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+                    FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-columna footer-marca">
+
+            <div class="footer-logo">
+                <span class="footer-logo-icon">K</span>
+                <div>
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+            </div>
+
+            <p>
+                Tecnología, innovación y soluciones informáticas
+                para mejorar tu experiencia digital.
+            </p>
+
+            <div class="footer-redes">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="TikTok">♪</a>
+            </div>
+
+        </div>
+
+        <div class="footer-columna">
+            <h3>Enlaces rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="Categorias.html">Categorias</a></li>
+                <li><a href="fertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-columna">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="Categorias.html">Laptops</a></li>
+                <li><a href="Categorias.html">PC Gamer</a></li>
+                <li><a href="Categorias.html">Monitores</a></li>
+                <li><a href="Categorias.html">Accesorios</a></li>
+                <li><a href="Categorias.html">Componentes</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-columna footer-contacto">
+            <h3>Contáctanos</h3>
+            <p>📍 Lima, Perú</p>
+            <p>📞 +51 999 999 999</p>
+            <p>✉️ contacto@komputronik.com</p>
+            <p>🕐 Lun - Sáb: 9:00 AM - 7:00 PM</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 KOMPUTRONIK. Todos los derechos reservados.</p>
+        <div>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de privacidad</a>
+        </div>
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+                    WHATSAPP FLOTANTE
+========================================================= -->
+
+<a
+    href="https://wa.me/51999999999?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+    class="whatsapp-flotante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =========================================================
+                    JAVASCRIPT
+========================================================= -->
+
+<script src="js/script.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

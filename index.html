@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOMPUTRONIK | Tecnología y Computadoras</title>
+    <link rel="stylesheet" href="css/stayle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/preloader.css">
+</head>
+
+<body>
+    <div id="preloader">
+    <img src="img/logooficial.png" alt="Logo" class="preloader-logo">
+    <div class="spinner"></div>
+    <p class="preloader-text">¡Expertos en Tecnologías!</p>
+    </div>
+
+   <!-- Barra de navegacion -->
+    <nav class="navbar-transparent">
+           <!-- logo -->
+
+    <div class="nav-top">
+        <!-- LOGO -->
+        <div class="logo-nav">
+            <a href="index.html">
+                <span class="logo-icon">
+                  <img src="img/logooficial.png" alt="Logo Komputronik" class="logo-img">
+               </span>
+                <div class="logo-text">
+                    <h2>
+                        KOMPUTRONIK
+                    </h2>
+                    <span>
+                        TECNOLOGÍA & INNOVACIÓN
+                    </span>
+                </div>
+            </a>
+        </div>
+        <!-- BUSCADOR -->
+<div class="buscador">
+    <input
+        type="text"
+        id="buscadorProductos"
+        placeholder="Buscar laptops, PC gamer, componentes..."
+        autocomplete="off"
+    >
+
+    <button
+        type="button"
+        id="btnBuscar"
+        aria-label="Buscar productos"
+    >
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
+
+        <!-- MENÚ PRINCIPAL -->
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-activo"> Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="fertas.html" >Ofertas</a> </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="nav-acciones">
+            <!-- =========================================================
+                BOTÓN MODO OSCURO / CLARO
+========================================================= -->
+
+<button
+    id="btnTema"
+    class="btn-tema"
+    type="button"
+    aria-label="Cambiar tema"
+>
+
+    🌙
+
+</button>
+
+            <!-- iniciar sesión -->
+            <a href="login.html" class="nav-login" aria-label="Iniciar sesión">
+                <i class="fa-solid fa-user"></i>
+                <span class="nav-login-text">Iniciar Sesión</span>
+            </a>
+
+               <!-- carrito de compras -->
+
+            <a href="carrito.html" class="carrito" aria-label="Carrito de compras">
+                <i class="fa-solid fa-cart-shopping carrito-icono"></i>
+                <span class="carrito-contador" id="contadorCarrito">
+                    0
+                </span>
+            </a>
+            <!-- MENÚ MÓVIL -->
+            <button class="menu-movil" id="btnMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+     <!-- carrusel principal -->
+    <section class="carrusel">
+        <div class="carrusel-container">
+<!-- IMAGEN 0 -->
+            <div class="slide activo">
+                <img src="img/carjose1.jpeg" alt="Computadoras KOMPUTRONIK">
+             
+
+            </div>
+<!-- IMAGEN 1 -->
+            <div class="slide">
+                <img src="img/carel2.jpeg"  alt ="Computadoras KOMPUTRONIK">
+            
+
+            </div>
+ <!-- IMAGEN 2 -->
+            <div class="slide">
+             <img src="img/carel3.jpeg"  alt="PC Gamer KOMPUTRONIK">
+
+            </div>
+<!-- IMAGEN 3 -->
+            <div class="slide">
+                <img src="img/carblanco.jpeg" alt="Accesorios tecnológicos">
+
+            </div>
+
+            <!-- BOTÓN ANTERIOR -->
+            <button class="carrusel-btn anterior" id="btnAnterior">
+                ❮
+            </button>
+            <!-- BOTÓN SIGUIENTE -->
+            <button class="carrusel-btn siguiente" id="btnSiguiente">
+                ❯
+            </button>
+            <!-- INDICADORES -->
+            <div class="indicadores">
+                <span class="indicador activo" data-slide="0"></span>
+                <span class="indicador" data-slide="1"></span>
+                <span class="indicador" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+<!-- =========================================================
+                    RELOJ DIGITAL
+========================================================= -->
+
+<section class="reloj-section">
+
+    <div class="reloj-container">
+
+        <span class="reloj-label">
+            🕐 HORA ACTUAL
+        </span>
+
+        <div id="relojDigital" class="reloj-digital">
+            00:00:00
+        </div>
+
+        <p id="fechaActual" class="fecha-actual">
+            Cargando fecha...
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+                    CATEGORÍAS
+========================================================= -->
+
+
+    <div class="categorias-titulo">
+
+        <span>CATEGORÍAS</span>
+
+        <h2>Encuentra lo que necesitas</h2>
+
+        <p>
+            Explora nuestra variedad de productos tecnológicos
+            para trabajo, estudio y entretenimiento.
+        </p>
+
+    </div>
+<section class="categorias" id="categorias">
+
+    <!-- =====================================================
+                    TARJETAS DE CATEGORÍAS
+    ====================================================== -->
+
+    <div class="categorias-grid">
+
+
+        <a href="Categorias.html"
+           class="categoria-card"
+           onclick="mostrarCategoria('laptops')">
+
+            <div class="categoria-icono">
+                💻
+            </div>
+
+            <div class="categoria-info">
+
+                <h3>Laptops</h3>
+
+                <p>
+                    Equipos para trabajo y estudio
+                </p>
+
+            </div>
+
+            <span class="categoria-flecha">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="Categorias.html?categoria=pc-gamer"
+           class="categoria-card"
+           onclick="mostrarCategoria('pc-gamer')">
+
+            <div class="categoria-icono">
+                🖥️
+            </div>
+
+            <div class="categoria-info">
+
+                <h3>PC Gamer</h3>
+
+                <p>
+                    Potencia para tus videojuegos
+                </p>
+
+            </div>
+
+            <span class="categoria-flecha">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="Categorias.html?categoria=monitores"
+           class="categoria-card"
+           onclick="mostrarCategoria('monitores')">
+
+            <div class="categoria-icono">
+                🖥️
+            </div>
+
+            <div class="categoria-info">
+
+                <h3>Monitores</h3>
+
+                <p>
+                    Imagen y rendimiento superior
+                </p>
+
+            </div>
+
+            <span class="categoria-flecha">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="Categorias.html?categoria=accesorios"
+           class="categoria-card"
+           onclick="mostrarCategoria('accesorios')">
+
+            <div class="categoria-icono">
+                🖱️
+            </div>
+
+            <div class="categoria-info">
+
+                <h3>Accesorios</h3>
+
+                <p>
+                    Todo para complementar tu setup
+                </p>
+
+            </div>
+
+            <span class="categoria-flecha">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="Categorias.html?categoria=enfriamiento"
+           class="categoria-card"
+           onclick="mostrarCategoria('enfriamiento')">
+
+            <div class="categoria-icono">
+                ❄️
+            </div>
+
+            <div class="categoria-info">
+
+                <h3>Enfriamiento</h3>
+
+                <p>
+                    Mantén tu equipo a la temperatura ideal
+                </p>
+
+            </div>
+
+            <span class="categoria-flecha">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="Categorias.html?categoria=gaming"
+           class="categoria-card"
+           onclick="mostrarCategoria('gaming')">
+
+            <div class="categoria-icono">
+                🎮
+            </div>
+
+            <div class="categoria-info">
+
+                <h3>Gaming</h3>
+
+                <p>
+                    La mejor experiencia gamer
+                </p>
+
+            </div>
+
+            <span class="categoria-flecha">
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+                    PRODUCTOS DE CATEGORÍA
+    ====================================================== -->
+
+    <section id="productosCategoria"
+             class="productos-categoria">
+
+        <div id="contenedorProductosCategoria"
+             class="productos-categoria-grid">
+
+            <!-- PRODUCTOS GENERADOS POR JAVASCRIPT -->
+
+        </div>
+
+    </section>
+
+</section>
+    <!-- =========================================================
+                    MARCAS ALIADAS
+========================================================= -->
+
+<section class="marcas-section">
+
+    <div class="marcas-card">
+
+        <div class="marcas-track">
+
+            <div class="marcas-grupo">
+                <span class="marca-item"><img src="img/marcas/amd.png" alt="AMD"></span>
+                <span class="marca-item"><img src="img/marcas/acer.png" alt="Acer"></span>
+                <span class="marca-item"><img src="img/marcas/coolermaster.png" alt="Cooler Master"></span>
+                <span class="marca-item"><img src="img/marcas/samsung.png" alt="Samsung"></span>
+                <span class="marca-item"><img src="img/marcas/logitech.png" alt="Logitech"></span>
+                <span class="marca-item"><img src="img/marcas/lenovo.png" alt="Lenovo"></span>
+                <span class="marca-item"><img src="img/marcas/msi.png" alt="MSI"></span>
+                <span class="marca-item"><img src="img/marcas/asus.png" alt="Asus"></span>
+                <span class="marca-item"><img src="img/marcas/gigabyte.png" alt="Gigabyte"></span>
+                <span class="marca-item"><img src="img/marcas/lg.png" alt="LG"></span>
+                <span class="marca-item"><img src="img/marcas/dell.png" alt="Dell"></span>
+            </div>
+
+            <!-- Grupo duplicado (oculto a efectos visuales, solo para el loop continuo) -->
+            <div class="marcas-grupo" aria-hidden="true">
+                <span class="marca-item"><img src="img/marcas/amd.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/acer.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/coolermaster.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/samsung.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/logitech.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/lenovo.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/msi.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/asus.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/gigabyte.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/lg.png" alt=""></span>
+                <span class="marca-item"><img src="img/marcas/dell.png" alt=""></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!--=========================================================
+                PRODUCTOS DESTACADOS
+=========================================================-->
+    <section class="productos-destacados">
+        <div class="productos-titulo">
+            <span>PRODUCTOS DESTACADOS</span>
+            <h2>Lo mejor de la tecnología</h2>
+            <p>
+                Encuentra equipos y accesorios seleccionados
+                para mejorar tu experiencia tecnológica.
+            </p>
+        </div>
+        <div class="productos-grid">
+            <!--=================================================
+                        PRODUCTO 1
+        =================================================-->
+            <article class="producto-card">
+                <div class="producto-imagen">
+                    <span class="producto-etiqueta">
+                        DESTACADO
+                    </span>
+                    <img src="img/ft01.webp" alt="Laptop Gamer">
+                </div>
+                <div class="producto-contenido">
+                    <span class="producto-categoria">
+                        LAPTOPS
+                    </span>
+                    <h3>
+                        Laptop Gamer Pro
+                    </h3>
+                    <p class="producto-descripcion">
+                        Alto rendimiento para videojuegos,
+                        diseño y trabajo profesional.
+                    </p>
+                    <div class="producto-precio">
+                        <span class="precio">
+                            S/ 3,499
+                        </span>
+                    </div>
+                    <button class="btn-producto btn-agregar" data-id="1" data-nombre="Laptop Gamer Pro"
+                        data-precio="3499" data-imagen="img/ft01.webp">
+                        Agregar al carrito →
+                    </button>
+                </div>
+            </article>
+        <!--=================================================
+                        PRODUCTO 2
+        =================================================-->
+            <article class="producto-card">
+                <div class="producto-imagen">
+                    <span class="producto-etiqueta">
+                        DESTACADO
+                    </span>
+                    <img src="img/ft02.jpg" alt="PC Gamer">
+                </div>
+                <div class="producto-contenido">
+
+                    <span class="producto-categoria">
+                        PC GAMER
+                    </span>
+                    <h3>
+                        PC Gamer Extreme
+                    </h3>
+                    <p class="producto-descripcion">
+                        Potencia y velocidad para disfrutar
+                        tus juegos favoritos.
+                    </p>
+                    <div class="producto-precio">
+                        <span class="precio">
+                            S/ 4,299
+                        </span>
+                    </div>
+                    <button class="btn-producto btn-agregar" 
+                    data-id="2" 
+                    data-nombre="PC Gamer Extreme"
+                    data-precio="4200" 
+                    data-imagen="img/ft02.jpg">
+                        Agregar al carrito →
+                    </button>
+                </div>
+            </article>
+            <!--=================================================
+                        PRODUCTO 3
+        =================================================-->
+            <article class="producto-card">
+                <div class="producto-imagen">
+                    <span class="producto-etiqueta">
+                        NUEVO
+                    </span>
+                    <img src="img/ft03.jpeg" alt="Monitor Gamer">
+                </div>
+                <div class="producto-contenido">
+                    <span class="producto-categoria">
+                        MONITORES
+                    </span>
+                    <h3>
+                        Monitor Gamer 27"
+                    </h3>
+                    <p class="producto-descripcion">
+                        Alta resolución y excelente
+                        fluidez para gaming.
+                    </p>
+                    <div class="producto-precio">
+                        <span class="precio">
+                            S/ 1,299
+                        </span>
+                    </div>
+                    <button class="btn-producto btn-agregar"
+                     data-id="3" 
+                     data-nombre="Monitor Gamer 27"
+                    data-precio="1200" 
+                    data-imagen="img/ft03.jpeg">
+                        Agregar al carrito →
+                    </button>
+                </div>
+            </article>
+            <!--=================================================
+                        PRODUCTO 4
+        =================================================-->
+            <article class="producto-card">
+                <div class="producto-imagen">
+                    <span class="producto-etiqueta">
+                        OFERTA
+                    </span>
+                    <img src="img/ft04.jpeg" alt="Teclado Gamer">
+                </div>
+                <div class="producto-contenido">
+                    <span class="producto-categoria">
+                        ACCESORIOS
+                    </span>
+                    <h3>
+                        Teclado Mecánico RGB
+                    </h3>
+                    <p class="producto-descripcion">
+                        Diseño mecánico, iluminación RGB
+                        y respuesta rápida.
+                    </p>
+                    <div class="producto-precio">
+                        <span class="precio-anterior">
+                            S/ 299
+                        </span>
+                        <span class="precio">
+                            S/ 229
+                        </span>
+                    </div>
+                    <button class="btn-producto btn-agregar" 
+                    data-id="4" 
+                    data-nombre="Teclado Mecánico RGB"
+                    data-precio="299" 
+                    data-imagen="img/ft04.jpeg">
+                        Agregar al carrito →
+                    </button>
+                </div>
+            </article>
+        </div>
+        <!--=====================================================
+                    BOTÓN VER PRODUCTOS
+    =====================================================-->
+        <div class="productos-ver-mas">
+            <a href="fertas.html" class="btn-ver-productos">
+                Ver todos los productos →
+            </a>
+        </div>
+    </section>
+
+<!-- =========================================================
+                HERRAMIENTAS ÚTILES
+========================================================= -->
+
+<section class="herramientas-section" id="asistenteTermico">
+
+    <div class="encabezado-seccion">
+
+        <span class="section-label">
+            KOMPUTRONIK
+        </span>
+
+        <h2>
+            🌡️ ASISTENTE TÉRMICO
+        </h2>
+
+        <p>
+            Consulta la temperatura de tu ciudad y descubre
+            cómo proteger el rendimiento de tu computadora.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+                    ASISTENTE TÉRMICO
+    ====================================================== -->
+
+    <div class="clima-container">
+
+        <div class="clima-header">
+
+            <div>
+
+                <span class="clima-label">
+                    🌡️ ASISTENTE TÉRMICO KOMPUTRONIK
+                </span>
+
+                <h3>
+                    ¿El calor puede afectar tu computadora?
+                </h3>
+
+                <p>
+                    Consulta el clima de tu ciudad y recibe
+                    recomendaciones para mejorar la refrigeración
+                    de tu PC o laptop.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+                    BUSCADOR DE CIUDAD
+        ================================================== -->
+
+        <div class="clima-buscador">
+
+            <input
+                type="text"
+                id="ciudadClima"
+                placeholder="Ingrese una ciudad..."
+                value="Lima"
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="btnBuscarClima"
+            >
+                🔍 Consultar temperatura
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+                    RESULTADO
+        ================================================== -->
+
+        <div
+            id="resultadoClima"
+            class="resultado-clima"
+        >
+
+            <div class="clima-cargando">
+
+                <p>
+                    🌤️ Consulta la temperatura de tu ciudad
+                    para recibir una recomendación.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+                    RECOMENDACIÓN
+        ================================================== -->
+
+        <div
+            id="recomendacionTermica"
+            class="recomendacion-termica"
+            style="display: none;"
+        >
+
+            <div class="recomendacion-icono">
+                💡
+            </div>
+
+            <div class="recomendacion-contenido">
+
+                <span>
+                    RECOMENDACIÓN KOMPUTRONIK
+                </span>
+
+                <h3 id="tituloRecomendacion">
+                    Recomendación
+                </h3>
+
+                <p id="textoRecomendacion">
+                    Aquí aparecerá la recomendación.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+                    BOTÓN ENFRIAMIENTO
+        ================================================== -->
+
+        <div
+            id="accionEnfriamiento"
+            class="accion-enfriamiento"
+            style="display: none;"
+        >
+
+            <a
+                href="Categorias.html?categoria=enfriamiento"
+                class="btn-enfriamiento"
+            >
+
+                ❄️ Ver productos recomendados
+
+            </a>
+
+        </div>
+
+
+        <!-- MENSAJE DE ERROR -->
+
+        <p
+            id="mensajeErrorClima"
+            class="mensaje-error-clima"
+        ></p>
+
+    </div>
+
+</section>
+
+</section>
+   
+    <script src="js/script.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/clima.js"></script>
+    <script src="js/reloj.js"></script>
+    <script src="js/tema.js"></script>
+
+    <!--=========================================================
+                        FOOTER
+=========================================================-->
+<footer class="footer">
+    <div class="footer-container">
+        <!--=================================================
+                        INFORMACIÓN
+        =================================================-->
+        <div class="footer-columna footer-marca">
+            <div class="footer-logo">
+                <span class="footer-logo-icon">K</span>
+                <div>
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+            </div>
+            <p>
+                Tecnología, innovación y soluciones informáticas
+                para mejorar tu experiencia digital.
+            </p>
+            <div class="footer-redes">
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+                <a href="#" aria-label="TikTok">
+                    ♪
+                </a>
+            </div>
+        </div>
+        <!--=================================================
+                        ENLACES
+        =================================================-->
+        <div class="footer-columna">
+            <h3>Enlaces rápidos</h3>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="servicios.html">
+                        Servicios
+                    </a>
+                </li>
+                <li>
+                    <a href="accesorios.html">
+                        Accesorios
+                    </a>
+                </li>
+                <li>
+                    <a href="ofertas.html">
+                        Ofertas
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--=================================================
+                        CATEGORÍAS
+        =================================================-->
+        <div class="footer-columna">
+            <h3>Categorías</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        Laptops
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        PC Gamer
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Monitores
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Accesorios
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Componentes
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--=================================================
+                        CONTACTO
+        =================================================-->
+        <div class="footer-columna footer-contacto">
+            <h3>Contáctanos</h3>
+            <p>
+                📍 Lima, Perú
+            </p>
+            <p>
+                📞 +51 999 999 999
+            </p>
+            <p>
+                ✉️ contacto@komputronik.com
+            </p>
+            <p>
+                🕐 Lun - Sáb: 9:00 AM - 7:00 PM
+            </p>
+        </div>
+    </div>
+    <!--=====================================================
+                    PARTE INFERIOR FOOTER
+    =====================================================-->
+    <div class="footer-bottom">
+        <p>
+            © 2026 KOMPUTRONIK. Todos los derechos reservados.
+        </p>
+        <div>
+            <a href="#">
+                Términos y condiciones
+            </a>
+            <a href="#">
+                Política de privacidad
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="js/preloader.js"></script>
+</body>
+
+
+<!--=========================================================
+                    WHATSAPP FLOTANTE
+========================================================-->
+<div class="whatsapp-widget">
+
+    <div class="whatsapp-popup" id="whatsappPopup">
+
+        <div class="whatsapp-popup-header">
+            <p>¿Con quién quieres hablar?</p>
+        </div>
+
+        <div class="whatsapp-popup-lista">
+
+            <a href="https://wa.me/51957865303?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+                target="_blank" rel="noopener noreferrer" class="whatsapp-contacto">
+                <span class="whatsapp-contacto-icono"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="whatsapp-contacto-info">
+                    <strong>Juan Bray Lara Taype</strong>
+                    <span>+51 957 865 303</span>
+                </span>
+            </a>
+
+            <a href="https://wa.me/51987654321?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+                target="_blank" rel="noopener noreferrer" class="whatsapp-contacto">
+                <span class="whatsapp-contacto-icono"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="whatsapp-contacto-info">
+                    <strong>Jose Eduardo Zavaleta Rosales</strong>
+                    <span>+51 987 654 321</span>
+                </span>
+            </a>
+
+            <a href="https://wa.me/51987654321?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+                target="_blank" rel="noopener noreferrer" class="whatsapp-contacto">
+                <span class="whatsapp-contacto-icono"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="whatsapp-contacto-info">
+                    <strong>Segundo Demetrio Alvarez Vilca</strong>
+                    <span>+51 987 654 321</span>
+                </span>
+            </a>
+
+            <a href="https://wa.me/51987654321?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+                target="_blank" rel="noopener noreferrer" class="whatsapp-contacto">
+                <span class="whatsapp-contacto-icono"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="whatsapp-contacto-info">
+                    <strong>Paola Gabriela Paz Huapaya</strong>
+                    <span>+51 987 654 321</span>
+                </span>
+            </a>
+
+            <a href="https://wa.me/51987654321?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+                target="_blank" rel="noopener noreferrer" class="whatsapp-contacto">
+                <span class="whatsapp-contacto-icono"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="whatsapp-contacto-info">
+                    <strong>Elmer Luis Caballero de la Cruz</strong>
+                    <span>+51 987 654 321</span>
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <button type="button" class="whatsapp-flotante" id="whatsappToggle" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+</div>
+<script src="js/whatsapp-widget.js"></script>

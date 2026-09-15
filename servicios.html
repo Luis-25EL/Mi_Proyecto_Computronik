@@ -1,0 +1,592 @@
+<!-- =========================================================
+                    PÁGINA SERVICIOS
+========================================================= -->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICIOS</title>
+    <link rel="stylesheet" href="css/stayle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <section class="hero-servicios">
+
+
+   <!-- Barra de navegacion -->
+    <nav class="navbar-transparent">
+        <div class="nav-top">
+           <!-- logo -->
+        <div class="logo-nav">
+            <a href="index.html">
+                <span class="logo-icon">K</span>
+                <div class="logo-text">
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+            </a>
+        </div>
+        <!-- BUSCADOR -->
+<div class="buscador">
+    <input
+        type="text"
+        id="buscadorProductos"
+        placeholder="Buscar laptops, PC gamer, componentes..."
+        autocomplete="off"
+    >
+
+    <button
+        type="button"
+        id="btnBuscar"
+        aria-label="Buscar productos"
+    >
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
+
+        <!-- MENÚ PRINCIPAL -->
+        <ul class="nav-links">
+            <li><a href="index.html" > Inicio</a></li>
+            <li><a href="servicios.html" class="nav-activo">Servicios</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="fertas.html" >Ofertas</a> </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="nav-acciones">
+<button
+    id="btnTema"
+    class="btn-tema"
+    type="button"
+    aria-label="Cambiar tema"
+>
+
+    🌙
+
+</button>
+
+            <!-- iniciar sesión -->
+            <a href="login.html" class="nav-login" aria-label="Iniciar sesión">
+                <i class="fa-solid fa-user"></i>
+                <span class="nav-login-text">Iniciar Sesión</span>
+            </a>
+
+            <a href="carrito.html" class="carrito" aria-label="Carrito de compras">
+
+                <i class="fa-solid fa-cart-shopping carrito-icono"></i>
+
+                <span class="carrito-contador" id="contadorCarrito">
+                    0
+                </span>
+            </a>
+            <!-- MENÚ MÓVIL -->
+            <button class="menu-movil" id="btnMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        </nav>
+
+
+        <!-- CONTENIDO PRINCIPAL DEL HERO -->
+        <div class="hero-content">
+
+            <span class="eyebrow">Servicio técnico especializado</span>
+
+            <h1>Nuestros Servicios</h1>
+
+            <p>
+                En KOMPUTRONIK contamos con personal capacitado para brindar
+                soluciones rápidas, seguras y con garantía para todos tus
+                electrodomésticos.
+            </p>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Repuestos originales</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Atención a domicilio</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================================
+                    CALCULADORA DE EDAD
+========================================================= -->
+
+<div class="edad-container">
+
+    <h3>
+        🎂 Calculadora de Edad
+    </h3>
+
+    <p>
+        Ingresa tu fecha de nacimiento para calcular tu edad.
+    </p>
+
+
+    <div class="edad-form">
+
+        <div class="campo-edad">
+
+            <label for="fechaNacimiento">
+                Fecha de nacimiento
+            </label>
+
+            <input
+                type="date"
+                id="fechaNacimiento"
+            >
+
+        </div>
+
+
+        <button
+            type="button"
+            id="btnCalcularEdad"
+            class="btn-calcular-edad"
+        >
+            Calcular edad
+        </button>
+
+    </div>
+
+
+    <!-- RESULTADO -->
+
+    <div
+        id="resultadoEdad"
+        class="resultado-edad"
+    >
+        Ingresa tu fecha de nacimiento.
+    </div>
+
+
+    <!-- ERROR -->
+
+    <p
+        id="mensajeErrorEdad"
+        class="mensaje-error-edad"
+    ></p>
+
+</div>
+
+    </section>
+
+
+    <!-- =========================================================
+                    INTRODUCCIÓN
+========================================================= -->
+
+    <section class="servicios-intro">
+
+        <span class="section-label">KOMPUTRONIK</span>
+
+        <h2>Soluciones para tus equipos</h2>
+
+        <p>
+            Nuestro objetivo es ofrecer un servicio técnico de calidad,
+            utilizando repuestos originales y herramientas profesionales para
+            garantizar el correcto funcionamiento de cada electrodoméstico.
+            Trabajamos con responsabilidad, rapidez y atención personalizada.
+        </p>
+
+    </section>
+
+
+    <!-- =========================================================
+                    6 SERVICIOS
+========================================================= -->
+
+    <section class="servicios-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">NUESTROS SERVICIOS</span>
+
+            <h2>Lo que podemos hacer por ti</h2>
+
+            <p>
+                Conoce nuestros principales servicios técnicos especializados.
+            </p>
+
+        </div>
+
+
+        <div class="servicios-grid">
+
+
+            <!-- SERVICIO 1 -->
+            <article class="card">
+
+                <div class="card-img-wrap">
+                    <img src="img/reparacion-lavadora.jpg" alt="Técnico reparando una lavadora">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>Reparación de Lavadoras</h3>
+
+                    <p>
+                        Diagnosticamos y reparamos fallas mecánicas y eléctricas,
+                        devolviendo el funcionamiento óptimo de tu lavadora.
+                    </p>
+
+                    <span class="card-number">01</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICIO 2 -->
+            <article class="card">
+
+                <div class="card-img-wrap">
+                    <img src="img/mantenimiento-refrigeradora.jpg" alt="Mantenimiento de refrigeradora">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>Mantenimiento de Refrigeradoras</h3>
+
+                    <p>
+                        Realizamos limpieza interna, revisión de componentes y
+                        mantenimiento preventivo para prolongar la vida útil del equipo.
+                    </p>
+
+                    <span class="card-number">02</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICIO 3 -->
+            <article class="card">
+
+                <div class="card-img-wrap">
+                    <img src="img/instalacion-cocina.avif" alt="Instalación de cocina">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>Instalación de Cocinas</h3>
+
+                    <p>
+                        Instalamos cocinas a gas y eléctricas siguiendo todas las normas
+                        de seguridad para un funcionamiento confiable.
+                    </p>
+
+                    <span class="card-number">03</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICIO 4 -->
+            <article class="card">
+
+                <div class="card-img-wrap">
+                    <img src="img/servicio-domicilio.png" alt="Técnico brindando servicio a domicilio">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>Servicio Técnico a Domicilio</h3>
+
+                    <p>
+                        Nuestros técnicos visitan tu hogar para realizar diagnósticos,
+                        mantenimiento y reparaciones sin que tengas que trasladar tus equipos.
+                    </p>
+
+                    <span class="card-number">04</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICIO 5 -->
+            <article class="card">
+
+                <div class="card-img-wrap">
+                    <img src="img/repuestos-originales.png" alt="Repuestos originales para electrodomésticos">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>Repuestos Originales</h3>
+
+                    <p>
+                        Utilizamos repuestos originales que ofrecen mayor durabilidad,
+                        rendimiento y compatibilidad con tus electrodomésticos.
+                    </p>
+
+                    <span class="card-number">05</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICIO 6 -->
+            <article class="card">
+
+                <div class="card-img-wrap">
+                    <img src="img/garantia-servicio.png" alt="Garantía de servicio técnico">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>Garantía del Servicio</h3>
+
+                    <p>
+                        Todas nuestras reparaciones cuentan con garantía para brindarte
+                        confianza y seguridad después de cada servicio.
+                    </p>
+
+                    <span class="card-number">06</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+                    BENEFICIOS
+========================================================= -->
+
+    <section class="beneficios-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">¿POR QUÉ ELEGIRNOS?</span>
+
+            <h2>Beneficios de nuestro servicio</h2>
+
+        </div>
+
+
+        <div class="beneficios-grid">
+
+            <div class="beneficio-card">
+
+                <div class="beneficio-icon">🔧</div>
+
+                <h3>Técnicos Especializados</h3>
+
+                <p>
+                    Personal capacitado para todo tipo de electrodomésticos.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio-card">
+
+                <div class="beneficio-icon">🚚</div>
+
+                <h3>Atención a Domicilio</h3>
+
+                <p>
+                    Vamos hasta tu hogar de forma rápida y segura.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio-card">
+
+                <div class="beneficio-icon">🛡️</div>
+
+                <h3>Garantía</h3>
+
+                <p>
+                    Todos los servicios cuentan con garantía.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio-card">
+
+                <div class="beneficio-icon">⭐</div>
+
+                <h3>Calidad</h3>
+
+                <p>
+                    Utilizamos herramientas y repuestos de excelente calidad.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <script src="js/edad.js"></script>
+    <script src="js/tema.js"></script>
+
+
+    <!--=========================================================
+                        FOOTER
+=========================================================-->
+    <footer class="footer">
+        <div class="footer-container">
+            <!--=================================================
+                        INFORMACIÓN
+        =================================================-->
+            <div class="footer-columna footer-marca">
+                <div class="footer-logo">
+                    <span class="footer-logo-icon">K</span>
+                    <div>
+                        <h2>KOMPUTRONIK</h2>
+                        <span>TECNOLOGÍA & INNOVACIÓN</span>
+                    </div>
+                </div>
+                <p>
+                    Tecnología, innovación y soluciones informáticas
+                    para mejorar tu experiencia digital.
+                </p>
+                <div class="footer-redes">
+                    <a href="#" aria-label="Facebook">
+                        f
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        ◎
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        ♪
+                    </a>
+                </div>
+            </div>
+            <!--=================================================
+                        ENLACES
+        =================================================-->
+            <div class="footer-columna">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="servicios.html">
+                            Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="accesorios.html">
+                            Accesorios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ofertas.html">
+                            Ofertas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--=================================================
+                        CATEGORÍAS
+        =================================================-->
+            <div class="footer-columna">
+                <h3>Categorías</h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Laptops
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PC Gamer
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Monitores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Accesorios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Componentes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--=================================================
+                        CONTACTO
+        =================================================-->
+            <div class="footer-columna footer-contacto">
+                <h3>Contáctanos</h3>
+                <p>
+                    📍 Lima, Perú
+                </p>
+                <p>
+                    📞 +51 999 999 999
+                </p>
+                <p>
+                    ✉️ contacto@komputronik.com
+                </p>
+                <p>
+                    🕐 Lun - Sáb: 9:00 AM - 7:00 PM
+                </p>
+            </div>
+        </div>
+        <!--=====================================================
+                    PARTE INFERIOR FOOTER
+    =====================================================-->
+        <div class="footer-bottom">
+            <p>
+                © 2026 KOMPUTRONIK. Todos los derechos reservados.
+            </p>
+            <div>
+                <a href="#">
+                    Términos y condiciones
+                </a>
+                <a href="#">
+                    Política de privacidad
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--=========================================================
+                    WHATSAPP FLOTANTE
+========================================================-->
+    <a href="https://wa.me/51999999999?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+        class="whatsapp-flotante" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    </body>
+
+</html>
+

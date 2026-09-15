@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contacto | KOMPUTRONIK</title>
+
+    <link
+        rel="stylesheet"
+        href="css/stayle.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+                    NAVEGACIÓN
+========================================================= -->
+
+<header class="header-tienda">
+    <div class="nav-top">
+        <div class="nav-top-left">
+        <!-- LOGO -->
+        <div class="logo-nav">
+            <a href="index.html">
+                <span class="logo-icon">
+                    K
+                </span>
+                <div class="logo-text">
+                    <h2>
+                        KOMPUTRONIK
+                    </h2>
+                    <span>
+                        TECNOLOGÍA & INNOVACIÓN
+                    </span>
+                </div>
+            </a>
+        </div>
+                <!-- BUSCADOR -->
+<div class="buscador">
+    <input
+        type="text"
+        id="buscadorProductos"
+        placeholder="Buscar laptops, PC gamer, componentes..."
+        autocomplete="off"
+    >
+
+    <button
+        type="button"
+        id="btnBuscar"
+        aria-label="Buscar productos"
+    >
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
+
+        <!-- MENÚ -->
+
+     
+
+        <ul class="nav-links">
+            <li><a href="index.html" > Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="fertas.html" >Ofertas</a> </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="nav-acciones">
+
+        <!-- MODO OSCURO -->
+
+        <button
+            id="btnTema"
+            class="btn-tema"
+            type="button"
+            aria-label="Cambiar tema"
+        >
+            🌙
+        </button>
+
+        <!-- iniciar sesión -->
+        <a href="login.html" class="nav-login" aria-label="Iniciar sesión">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-login-text">Iniciar Sesión</span>
+        </a>
+
+        <!-- CARRITO -->
+
+        <a
+            href="carrito.html"
+            class="carrito"
+            aria-label="Carrito"
+        >
+
+            <i
+                class="fa-solid fa-cart-shopping carrito-icono"
+            ></i>
+
+            <span
+                id="contadorCarrito"
+                class="carrito-contador"
+            >
+                0
+            </span>
+
+        </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+                        BANNER
+    ====================================================== -->
+
+    <div class="banner-principal">
+
+        <span class="tag-hero">
+            📞 ESTAMOS PARA AYUDARTE
+        </span>
+
+        <h1>
+            Contáctanos
+        </h1>
+
+        <p>
+            ¿Tienes alguna consulta?
+            Escríbenos y estaremos encantados de ayudarte.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+                    CONTACTO
+========================================================= -->
+
+<main class="contacto-section">
+
+
+    <div class="contacto-container">
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="contacto-info">
+
+            <span class="contacto-label">
+                KOMPUTRONIK
+            </span>
+
+            <h2>
+                Ponte en contacto
+                con nosotros
+            </h2>
+
+            <p>
+                Nuestro equipo está disponible para
+                ayudarte con tus consultas sobre productos,
+                servicios y pedidos.
+            </p>
+
+
+            <div class="dato-contacto">
+
+                <span class="icono-contacto">
+                    📍
+                </span>
+
+                <div>
+
+                    <strong>
+                        Dirección
+                    </strong>
+
+                    <p>
+                        Lima, Perú
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dato-contacto">
+
+                <span class="icono-contacto">
+                    📞
+                </span>
+
+                <div>
+
+                    <strong>
+                        Teléfono
+                    </strong>
+
+                    <p>
+                        +51 999 999 999
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dato-contacto">
+
+                <span class="icono-contacto">
+                    ✉️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Correo
+                    </strong>
+
+                    <p>
+                        contacto@komputronik.com
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+                        FORMULARIO
+        ================================================== -->
+
+        <div class="contacto-formulario">
+
+            <h2>
+                📝 Envíanos un mensaje
+            </h2>
+
+
+            <form id="formContacto">
+
+
+                <!-- NOMBRE -->
+
+                <div class="campo-contacto">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ingresa tu nombre"
+                    >
+
+                    <small
+                        id="errorNombre"
+                        class="error-contacto"
+                    ></small>
+
+                </div>
+
+
+                <!-- CORREO -->
+
+                <div class="campo-contacto">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="ejemplo@correo.com"
+                    >
+
+                    <small
+                        id="errorCorreo"
+                        class="error-contacto"
+                    ></small>
+
+                </div>
+
+
+                <!-- TELÉFONO -->
+
+                <div class="campo-contacto">
+
+                    <label for="telefono">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        placeholder="999 999 999"
+                        maxlength="9"
+                    >
+
+                    <small
+                        id="errorTelefono"
+                        class="error-contacto"
+                    ></small>
+
+                </div>
+
+
+                <!-- ASUNTO -->
+
+                <div class="campo-contacto">
+
+                    <label for="asunto">
+                        Asunto
+                    </label>
+
+                    <select id="asunto">
+
+                        <option value="">
+                            Selecciona un asunto
+                        </option>
+
+                        <option value="producto">
+                            Consulta sobre producto
+                        </option>
+
+                        <option value="pedido">
+                            Consulta sobre pedido
+                        </option>
+
+                        <option value="servicio">
+                            Consulta sobre servicio
+                        </option>
+
+                        <option value="otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                    <small
+                        id="errorAsunto"
+                        class="error-contacto"
+                    ></small>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div class="campo-contacto">
+
+                    <label for="mensaje">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        rows="5"
+                        placeholder="Escribe tu mensaje..."
+                    ></textarea>
+
+                    <small
+                        id="errorMensaje"
+                        class="error-contacto"
+                    ></small>
+
+                </div>
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    type="submit"
+                    class="btn-enviar-contacto"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Enviar mensaje
+
+                </button>
+
+
+                <!-- ÉXITO -->
+
+                <div
+                    id="mensajeExito"
+                    class="mensaje-exito"
+                ></div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+
+<!-- =========================================================
+                    JAVASCRIPT
+========================================================= -->
+
+<script src="js/script.js"></script>
+
+<script src="js/tema.js"></script>
+
+<script src="js/contacto.js"></script>
+
+
+</body>
+
+</html>
+<!--=========================================================
+                        FOOTER
+=========================================================-->
+<footer class="footer">
+    <div class="footer-container">
+        <!--=================================================
+                        INFORMACIÓN
+        =================================================-->
+        <div class="footer-columna footer-marca">
+            <div class="footer-logo">
+                <span class="footer-logo-icon">K</span>
+                <div>
+                    <h2>KOMPUTRONIK</h2>
+                    <span>TECNOLOGÍA & INNOVACIÓN</span>
+                </div>
+            </div>
+            <p>
+                Tecnología, innovación y soluciones informáticas
+                para mejorar tu experiencia digital.
+            </p>
+            <div class="footer-redes">
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+                <a href="#" aria-label="TikTok">
+                    ♪
+                </a>
+            </div>
+        </div>
+        <!--=================================================
+                        ENLACES
+        =================================================-->
+        <div class="footer-columna">
+            <h3>Enlaces rápidos</h3>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="servicios.html">
+                        Servicios
+                    </a>
+                </li>
+                <li>
+                    <a href="accesorios.html">
+                        Accesorios
+                    </a>
+                </li>
+                <li>
+                    <a href="ofertas.html">
+                        Ofertas
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--=================================================
+                        CATEGORÍAS
+        =================================================-->
+        <div class="footer-columna">
+            <h3>Categorías</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        Laptops
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        PC Gamer
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Monitores
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Accesorios
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Componentes
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--=================================================
+                        CONTACTO
+        =================================================-->
+        <div class="footer-columna footer-contacto">
+            <h3>Contáctanos</h3>
+            <p>
+                📍 Lima, Perú
+            </p>
+            <p>
+                📞 +51 999 999 999
+            </p>
+            <p>
+                ✉️ contacto@komputronik.com
+            </p>
+            <p>
+                🕐 Lun - Sáb: 9:00 AM - 7:00 PM
+            </p>
+        </div>
+    </div>
+    <!--=====================================================
+                    PARTE INFERIOR FOOTER
+    =====================================================-->
+    <div class="footer-bottom">
+        <p>
+            © 2026 KOMPUTRONIK. Todos los derechos reservados.
+        </p>
+        <div>
+            <a href="#">
+                Términos y condiciones
+            </a>
+            <a href="#">
+                Política de privacidad
+            </a>
+        </div>
+    </div>
+</footer>
+<!--=========================================================
+                    WHATSAPP FLOTANTE
+========================================================-->
+<a href="https://wa.me/51999999999?text=Hola%20KOMPUTRONIK,%20quisiera%20información%20sobre%20sus%20productos."
+    class="whatsapp-flotante" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
