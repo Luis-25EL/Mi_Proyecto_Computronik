@@ -1,0 +1,1860 @@
+
+/* =========================================================
+   KOMPUTRONIK
+   HOJA DE ESTILOS PRINCIPAL
+   ========================================================= */
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #111827;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================================================
+   BARRA DE NAVEGACIÓN
+   ========================================================= */
+
+.navbar-transparent {
+    width: 100%;
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 5%;
+
+    background: #0b1220;
+
+    position: relative;
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.20);
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    box-shadow: none;
+}
+
+.logo-icon .logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-text h2 {
+    color: white;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: #ebec8e;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   BUSCADOR
+   ========================================================= */
+
+.buscador {
+    width: 300px;
+    height: 42px;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.buscador input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    padding: 0 15px;
+
+    font-size: 13px;
+}
+
+.buscador button {
+    width: 48px;
+
+    border: none;
+
+    background: #f3f709;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+}
+
+.buscador button:hover {
+    background: #009bd1;
+}
+
+/* =========================================================
+   MENÚ PRINCIPAL
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative;
+
+    color: #e5e7eb;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 0;
+
+    transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.nav-activo {
+    color: #00bfff;
+}
+
+.nav-links li a.nav-activo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: #00bfff;
+}
+
+/* =========================================================
+   ACCIONES NAV
+   ========================================================= */
+
+.nav-acciones {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.nav-icono {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   CARRITO
+   ========================================================= */
+
+.carrito {
+    position: relative;
+
+    color: white;
+
+    font-size: 21px;
+
+    transition: 0.3s;
+}
+
+.carrito:hover {
+    color: #00bfff;
+}
+
+.carrito-contador {
+    position: absolute;
+
+    top: -10px;
+    right: -12px;
+
+    min-width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ef4444;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   MENÚ MÓVIL
+   ========================================================= */
+
+.menu-movil {
+    display: none;
+
+    width: 35px;
+    height: 35px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-movil span {
+    display: block;
+
+    width: 25px;
+    height: 3px;
+
+    margin: 5px auto;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+/* =========================================================
+   CARRUSEL
+   ========================================================= */
+
+.carrusel {
+    width: 100%;
+    height: 520px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #020617;
+}
+
+.carrusel-container {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: opacity 0.7s ease;
+}
+
+.slide.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* Oscurecer imagen */
+
+.slide::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.15)
+        );
+}
+
+/* =========================================================
+   INFORMACIÓN DEL CARRUSEL
+   ========================================================= */
+
+.slide-info {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 50%;
+    left: 8%;
+
+    transform: translateY(-50%);
+
+    max-width: 560px;
+
+    color: white;
+}
+
+.slide-info h1 {
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.slide-info p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #e5e7eb;
+
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #00bfff;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    background: #009bd1;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+}
+
+/* =========================================================
+   BOTONES CARRUSEL
+   ========================================================= */
+
+.carrusel-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    background: rgba(0,0,0,0.35);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.carrusel-btn:hover {
+    background: #00bfff;
+}
+
+.anterior {
+    left: 25px;
+}
+
+.siguiente {
+    right: 25px;
+}
+
+/* =========================================================
+   INDICADORES
+   ========================================================= */
+
+.indicadores {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.45);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.indicador.activo {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: #00bfff;
+}
+
+/* =========================================================
+   CATEGORÍAS
+   ========================================================= */
+
+.categorias {
+    padding: 80px 7%;
+
+    background: white;
+}
+
+.categorias-titulo,
+.productos-titulo {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+}
+
+.categorias-titulo span,
+.productos-titulo span {
+    color: #00a9df;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.categorias-titulo h2,
+.productos-titulo h2 {
+    margin-top: 10px;
+
+    font-size: 34px;
+
+    color: #111827;
+}
+
+.categorias-titulo p,
+.productos-titulo p {
+    margin-top: 12px;
+
+    color: #6b7280;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   GRID CATEGORÍAS
+   ========================================================= */
+
+.categorias-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.categoria-card {
+    min-height: 135px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: white;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #00bfff;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.categoria-icono {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf9ff;
+
+    border-radius: 12px;
+
+    font-size: 28px;
+}
+
+.categoria-info {
+    flex: 1;
+}
+
+.categoria-info h3 {
+    color: #111827;
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+.categoria-info p {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+.categoria-flecha {
+    color: #00a9df;
+
+    font-size: 24px;
+
+    transition: 0.3s;
+}
+
+.categoria-card:hover .categoria-flecha {
+    transform: translateX(5px);
+}
+
+/* =========================================================
+   PRODUCTOS DESTACADOS
+   ========================================================= */
+
+.productos-destacados {
+    padding: 80px 7%;
+
+    background:gray;
+}
+
+.productos-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+/* =========================================================
+   TARJETA PRODUCTO
+   ========================================================= */
+
+.producto-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    transition: 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+}
+
+/* =========================================================
+   IMAGEN PRODUCTO
+   ========================================================= */
+
+.producto-imagen {
+    height: 230px;
+
+    position: relative;
+
+    background: #f8fafc;
+
+    overflow: hidden;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: 0.4s;
+}
+
+.producto-card:hover .producto-imagen img {
+    transform: scale(1.07);
+}
+
+.producto-etiqueta {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    z-index: 2;
+
+    padding: 5px 9px;
+
+    background: #00bfff;
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+/* =========================================================
+   CONTENIDO PRODUCTO
+   ========================================================= */
+
+.producto-contenido {
+    padding: 20px;
+}
+
+.producto-categoria {
+    color: #00a9df;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.producto-contenido h3 {
+    margin: 8px 0;
+
+    color: #111827;
+
+    font-size: 18px;
+}
+
+.producto-descripcion {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    min-height: 40px;
+
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   PRECIOS
+   ========================================================= */
+
+.producto-precio {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.precio {
+    color: #111827;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.precio-anterior {
+    color: #9ca3af;
+
+    text-decoration: line-through;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   BOTÓN PRODUCTO
+   ========================================================= */
+
+.btn-producto {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0b1220;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-producto:hover {
+    background: #00bfff;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   BOTÓN VER PRODUCTOS
+   ========================================================= */
+
+.productos-ver-mas {
+    text-align: center;
+
+    margin-top: 45px;
+}
+
+.btn-ver-productos {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    border: 2px solid #00bfff;
+
+    border-radius: 7px;
+
+    color: #009bd1;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-ver-productos:hover {
+    background: #00bfff;
+
+    color: white;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    background: #080d18;
+
+    color: white;
+
+    padding-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 30px 50px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+    gap: 50px;
+}
+
+/* =========================================================
+   LOGO FOOTER
+   ========================================================= */
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.footer-logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #00bfff;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    font-size: 22px;
+}
+
+.footer-logo h2 {
+    font-size: 20px;
+}
+
+.footer-logo span {
+    color: #00bfff;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.footer-marca > p {
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 320px;
+}
+
+/* =========================================================
+   REDES SOCIALES
+   ========================================================= */
+
+.footer-redes {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.footer-redes a {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #151d2d;
+
+    color: white;
+
+    border-radius: 7px;
+
+    transition: 0.3s;
+}
+
+.footer-redes a:hover {
+    background: #00bfff;
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   COLUMNAS FOOTER
+   ========================================================= */
+
+.footer-columna h3 {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+.footer-columna ul {
+    list-style: none;
+}
+
+.footer-columna ul li {
+    margin-bottom: 12px;
+}
+
+.footer-columna ul li a {
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.footer-columna ul li a:hover {
+    color: #00bfff;
+
+    padding-left: 4px;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.footer-contacto p {
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    margin-bottom: 13px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+    border-top: 1px solid #1f2937;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 20px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.footer-bottom div {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-bottom a {
+    color: #6b7280;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #00bfff;
+}
+
+/* =========================================================
+   WHATSAPP FLOTANTE
+   ========================================================= */
+
+.whatsapp-flotante {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25d366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 29px;
+
+    z-index: 9999;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+
+    transition: 0.3s;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.1);
+
+    box-shadow: 0 8px 25px rgba(37,211,102,0.45);
+}
+
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar-transparent {
+        padding: 15px 3%;
+    }
+
+    .buscador {
+        width: 230px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar-transparent {
+        min-height: 70px;
+
+        padding: 12px 20px;
+    }
+
+    .logo-text h2 {
+        font-size: 17px;
+    }
+
+    .logo-text span {
+        font-size: 7px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 20px;
+    }
+
+    .buscador {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-icono {
+        display: none;
+    }
+
+    .menu-movil {
+        display: block;
+    }
+
+    .carrusel {
+        height: 470px;
+    }
+
+    .slide-info {
+        left: 7%;
+
+        right: 7%;
+
+        max-width: none;
+    }
+
+    .slide-info h1 {
+        font-size: 34px;
+    }
+
+    .slide-info p {
+        font-size: 14px;
+    }
+
+    .carrusel-btn {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    .anterior {
+        left: 12px;
+    }
+
+    .siguiente {
+        right: 12px;
+    }
+
+    .categorias {
+        padding: 60px 5%;
+    }
+
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .productos-destacados {
+        padding: 60px 5%;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categorias-titulo h2,
+    .productos-titulo h2 {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-bottom div {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .whatsapp-flotante {
+        width: 52px;
+        height: 52px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 25px;
+    }
+}
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .slide-info h1 {
+        font-size: 28px;
+    }
+
+    .slide-info p {
+        font-size: 13px;
+    }
+
+    .btn-hero {
+        padding: 11px 18px;
+
+        font-size: 12px;
+    }
+
+    .categoria-card {
+        padding: 18px;
+    }
+
+    .producto-imagen {
+        height: 220px;
+    }
+
+    .footer-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* =========================================================
+   HERRAMIENTAS ÚTILES - KOMPUTRONIK
+========================================================= */
+
+.herramientas-section {
+    width: 100%;
+    padding: 60px 20px;
+    background: #f5f5f5;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.herramientas-section .encabezado-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.herramientas-section .encabezado-seccion h2 {
+    margin: 10px 0;
+    font-size: 32px;
+    color: #08192f;
+}
+
+.herramientas-section .encabezado-seccion p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CONTENEDOR DEL CLIMA
+========================================================= */
+
+.clima-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   ENCABEZADO DEL CLIMA
+========================================================= */
+
+.clima-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.clima-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #f5c400;
+}
+
+.clima-header h3 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #08192f;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.clima-buscador {
+    display: flex;
+
+    gap: 15px;
+
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+}
+
+.clima-buscador input {
+    flex: 1;
+
+    height: 50px;
+
+    padding: 0 16px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.clima-buscador input:focus {
+    border-color: #f5c400;
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.clima-buscador button {
+    height: 50px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f5c400;
+
+    color: #08192f;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.clima-buscador button:hover {
+    background: #08192f;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESULTADO DEL CLIMA
+========================================================= */
+
+.resultado-clima {
+    min-height: 180px;
+
+    padding: 30px;
+
+    background: #08192f;
+
+    color: #ffffff;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   INFORMACIÓN METEOROLÓGICA
+========================================================= */
+
+.clima-info {
+    width: 100%;
+}
+
+.clima-ciudad {
+    margin-bottom: 15px;
+
+    font-size: 26px;
+
+    font-weight: bold;
+}
+
+.clima-icono {
+    font-size: 55px;
+
+    margin-bottom: 5px;
+}
+
+.clima-temperatura {
+    font-size: 48px;
+
+    font-weight: bold;
+
+    color: #f5c400;
+
+    margin: 5px 0;
+}
+
+.clima-descripcion {
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   DATOS ADICIONALES
+========================================================= */
+
+.clima-datos {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    flex-wrap: wrap;
+}
+
+.clima-dato {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.clima-dato span:first-child {
+    font-size: 14px;
+
+    color: #cccccc;
+}
+
+.clima-dato span:last-child {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   MENSAJE DE ERROR
+========================================================= */
+
+.mensaje-error-clima {
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #d90429;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CARGANDO
+========================================================= */
+
+.clima-cargando p {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .clima-container {
+        padding: 25px 18px;
+    }
+
+    .clima-header h3 {
+        font-size: 25px;
+    }
+
+    .clima-buscador {
+        flex-direction: column;
+    }
+
+    .clima-buscador button {
+        width: 100%;
+    }
+
+    .clima-temperatura {
+        font-size: 40px;
+    }
+
+    .clima-datos {
+        gap: 25px;
+    }
+}
+
+/* =========================================================
+   RELOJ DIGITAL - KOMPUTRONIK
+========================================================= */
+
+.reloj-section {
+    width: 100%;
+    padding: 35px 20px;
+    background: #08192f;
+}
+
+.reloj-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
+
+.reloj-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #08192f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   HORA
+========================================================= */
+
+.reloj-digital {
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: #08192f;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   FECHA
+========================================================= */
+
+.fecha-actual {
+    margin: 10px 0 0;
+
+    color: #666;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .reloj-digital {
+        font-size: 38px;
+
+        letter-spacing: 2px;
+    }
+
+    .reloj-container {
+        padding: 25px 15px;
+    }
+
+}
+
+/* =========================================================
+   BOTÓN MODO OSCURO / CLARO
+========================================================= */
+
+.btn-tema {
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f5c400;
+
+    color: #08192f;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: 0.3s;
+
+    margin-right: 15px;
+}
+
+
+.btn-tema:hover {
+
+    transform: scale(1.08);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MODO OSCURO
+========================================================= */
+
+body.modo-oscuro {
+
+    background: #111827;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+body.modo-oscuro .herramientas-section,
+body.modo-oscuro .reloj-section,
+body.modo-oscuro .ofertas-destacada,
+body.modo-oscuro .contenedor {
+
+    background: #111827;
+}
+
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+body.modo-oscuro .card-producto,
+body.modo-oscuro .conversor-container,
+body.modo-oscuro .clima-container,
+body.modo-oscuro .reloj-container,
+body.modo-oscuro .calculadora-container,
+body.modo-oscuro .edad-container {
+
+    background: #1f2937;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TEXTOS
+========================================================= */
+
+body.modo-oscuro h1,
+body.modo-oscuro h2,
+body.modo-oscuro h3,
+body.modo-oscuro h4 {
+
+    color: #ffffff;
+}
+
+
+body.modo-oscuro p {
+
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+body.modo-oscuro input,
+body.modo-oscuro select {
+
+    background: #374151;
+
+    color: #ffffff;
+
+    border-color: #4b5563;
+}
+
+
+body.modo-oscuro input::placeholder {
+
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+   CATEGORÍAS
+========================================================= */
+
+body.modo-oscuro .categorias {
+
+    background: #111827;
+}
+
+
+/* =========================================================
+   RESULTADOS
+========================================================= */
+
+body.modo-oscuro .resultado-conversion {
+
+    background: #1f2937;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TRANSICIÓN GENERAL
+========================================================= */
+
+body {
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
